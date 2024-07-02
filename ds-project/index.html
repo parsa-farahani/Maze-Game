@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Maze Game
+    </title>
+    <style>
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            background-color: #191a27;
+            display: grid;
+            place-content: center;
+            color: whitesmoke;
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        canvas {
+            width: 600px;
+            height: 600px;
+            border-radius: 0px;
+            background-color: #ccc;
+        }
+
+        .player-info {
+            margin-block-start: .5rem;
+            padding: .75rem;
+            border-radius: .75rem;
+            border: 1px solid grey;
+            display: none;
+        }
+
+        .stop-state,
+        .score-state {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .game-state {
+            margin: auto;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .results {
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(0%, -50%);
+            margin-inline-start: 2rem;
+            display: none;
+        }
+        .winner-cont,
+        .loser-cont {
+            display: flex;
+            gap: 2rem;
+            margin-block-end: 1rem;
+        }
+
+        .winner,
+        .loser {
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="game-state">
+            Move on!
+        </h1>
+        <canvas id="screen" width="600" height="600"></canvas>
+        <h2 class="player-info player1-info">
+            Player1 <span class="stop-state">stopped: no</span> <span class="score-state">score: 0</span>
+        </h2>
+        <h2 class="player-info player2-info">
+            Player2 <span class="stop-state">stopped: no</span> <span class="score-state">score: 0</span>
+        </h2>
+
+        <div class="results">
+            <h2 class="winner-cont">
+                Winner: <span class="winner"></span>
+            </h2>
+            <h2 class="loser-cont">
+                 <span class="loser"></span>
+            </h2>
+        </div>
+    </div>
+
+    <script src="stack.js"></script>
+    <script src="queue.js"></script>
+    <script src="_initials.js"></script>
+    <script src="_canvas.js"></script>
+    <script src="_labyrinth.js"></script>
+    <script src="_pathFinder.js"></script>
+    <script src="_exitPoint.js"></script>
+    <script src="_player.js"></script>
+    <script src="_game.js"></script>
+    <script src="app.js"></script>
+    <script src="kbdEvents.js" ></script>
+</body>
+</html>
